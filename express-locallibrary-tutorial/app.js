@@ -11,6 +11,14 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// 设置 Mongoose 连接
+const mongoose = require('mongoose');
+const mongoDB = 'mongodb://127.0.0.1/test';
+mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB 连接错误：'));
+
 // 设置模板引擎
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
