@@ -1,2 +1,2 @@
-# node-express-learning
-node.js+express简单web项目学习
+# express-mongoose-graphql
+express-mongoose-graphql整合
